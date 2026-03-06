@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script>
+    tailwind.config = { theme: { extend: { colors: { primary: '#6B4E71', accent: '#886a73', cta: '#6B4E71', ctaHover: '#8A6689', surface: '#FFF9F8', surfaceAlt: '#F7E6EE', textMain: '#3E2A3A', textMuted: '#9A7D90' }, fontFamily: { heading: ['Cormorant Garamond'], body: ['Montserrat'] } } } }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { overflow-x: hidden; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+    .gradient-text {
+      background: linear-gradient(135deg, var(--tw-gradient-from, #fff), var(--tw-gradient-to, #ccc));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .glass {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .noise::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+    .counter { display: inline-block; }
+  </style>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <title>Shop — Velvet &amp; Bloom</title>
+  <meta name="description" content="Display product offerings with clear navigation for categories like photo magnets and gift sets.">
+  <meta property="og:title" content="Shop — Velvet &amp; Bloom">
+  <meta property="og:description" content="Display product offerings with clear navigation for categories like photo magnets and gift sets.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+
+</head>
+<body class="bg-surface text-textMain font-body antialiased overflow-x-hidden">
+<nav class='fixed top-0 w-full backdrop-blur-xl bg-surface/80 border-b border-accent transition-all duration-300'> <div class='container mx-auto px-6 py-4 flex items-center justify-between'> <a href='index.html' class='text-primary text-lg font-heading font-bold'>Velvet & Bloom</a> <ul class='hidden md:flex space-x-6'> <li><a href='shop.html' class='text-primary font-bold'>Shop</a></li> <li><a href='about.html' class='text-textMuted hover:text-primary transition'>About</a></li> <li><a href='contact.html' class='text-textMuted hover:text-primary transition'>Contact</a></li> </ul> <button class='md:hidden text-primary focus:outline-none' id='mobile-menu-toggle'>☰</button> <a href='shop.html' class='bg-primary text-surface px-4 py-2 rounded-lg shadow-md hover:bg-ctaHover transition'>Shop Now</a> </div> <div id='mobile-menu' class='hidden bg-surface/90 w-full absolute top-full left-0 shadow-lg'> <ul class='flex flex-col space-y-4 p-4'> <li><a href='shop.html' class='text-primary font-bold'>Shop</a></li> <li><a href='about.html' class='text-textMuted hover:text-primary transition'>About</a></li> <li><a href='contact.html' class='text-textMuted hover:text-primary transition'>Contact</a></li> </ul> </div> </nav>
+<main class="font-body text-textMain bg-surface">
+  <!-- Hero Section -->
+  <section id="hero" class="relative min-h-screen flex items-center justify-center bg-surfaceAlt" data-aos="fade-up">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary via-accent to-secondary opacity-20"></div>
+    <div class="z-10 text-center px-6">
+      <h1 class="text-4xl md:text-6xl font-heading font-semibold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent" data-aos="fade-up" data-aos-duration="1000">
+        Luxury Photo Gifts, Perfectly Personal
+      </h1>
+      <p class="text-lg md:text-xl mt-4" style="color: #333333;" data-aos="fade-up" data-aos-delay="200">
+        Celebrate life’s moments with elegance and heartfelt design.
+      </p>
+      <a href="#product-grid" class="inline-block mt-8 px-8 py-3 text-white" style="background-color: #0056b3;" class="hover:bg-ctaHover rounded-lg text-lg font-medium transition">
+        Start Shopping
+      </a>
+    </div>
+  </section>
+
+  <!-- Filter Options Section -->
+  <section id="filter-options" class="py-16 md:py-24 bg-surface" data-aos="fade-up">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-heading font-semibold text-center mb-8">
+        Find the Perfect Gift
+      </h2>
+      <div class="flex flex-wrap justify-center gap-4">
+        <button class="px-6 py-2" style="background-color: #0056b3; color: #ffffff; border: none; border-radius: 9999px;" class="hover:bg-accent transition focus:ring focus:ring-primary">
+          Weddings
+        </button>
+        <button class="px-6 py-2" style="background-color: #0056b3; color: #ffffff; border: none; border-radius: 9999px;" class="hover:bg-accent transition focus:ring focus:ring-primary">
+          Birthdays
+        </button>
+        <button class="px-6 py-2" style="background-color: #0056b3; color: #ffffff; border: none; border-radius: 9999px;" class="hover:bg-accent transition focus:ring focus:ring-primary">
+          Anniversaries
+        </button>
+        <button class="px-6 py-2" style="background-color: #0056b3; color: #ffffff; border: none; border-radius: 9999px;" class="hover:bg-accent transition focus:ring focus:ring-primary">
+          All Occasions
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Grid Section -->
+  <section id="product-grid" class="py-16 md:py-24 bg-surfaceAlt" data-aos="fade-up">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-heading font-semibold text-center mb-12">
+        Shop Our Collection
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Product Card 1 -->
+        <article class="bg-white shadow-md hover:shadow-xl hover:scale-105 transition rounded-lg p-4" data-aos="fade-up" data-aos-delay="0">
+          <figure>
+            <img loading="lazy" src="https://images.unsplash.com/photo-1556228720-420a9d49c8df?w=800&q=80" alt="Elegant photo magnet with floral design in a white background" class="rounded-lg">
+          </figure>
+          <h3 class="font-heading text-xl mt-4">Floral Photo Magnet</h3>
+          <p class="mt-2" style="color: #333333;">Timeless elegance for any occasion.</p>
+        </article>
+
+        <!-- Product Card 2 -->
+        <article class="bg-white shadow-md hover:shadow-xl hover:scale-105 transition rounded-lg p-4" data-aos="fade-up" data-aos-delay="100">
+          <figure>
+            <img loading="lazy" src="https://images.unsplash.com/photo-1517685352821-92cf88aee5a5?w=800&q=80" alt="Personalized photo gift set with premium packaging displayed on a table" class="rounded-lg">
+          </figure>
+          <h3 class="font-heading text-xl mt-4">Personalized Gift Set</h3>
+          <p class="mt-2" style="color: #333333;">Luxury packaging for meaningful moments.</p>
+        </article>
+
+        <!-- Product Card 3 -->
+        <article class="bg-white shadow-md hover:shadow-xl hover:scale-105 transition rounded-lg p-4" data-aos="fade-up" data-aos-delay="200">
+          <figure>
+            <img loading="lazy" src="https://images.unsplash.com/photo-1580910051072-1a44b78e2f0a?w=800&q=80" alt="Romantic photo magnet with heart design placed on a wooden surface" class="rounded-lg">
+          </figure>
+          <h3 class="font-heading text-xl mt-4">Heart Photo Magnet</h3>
+          <p class="mt-2" style="color: #333333;">Spread love with every glance.</p>
+        </article>
+        
+        <!-- Add more product cards as needed -->
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section id="cta" class="py-16 md:py-24 bg-gradient-to-br from-primary to-accent" data-aos="fade-up">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-heading font-semibold text-white">
+        Ready to Create Your Perfect Gift?
+      </h2>
+      <p class="mt-4 text-lg" style="color: #f5f5f5;">
+        Start customizing your photo magnets or gift sets today and make memories last forever.
+      </p>
+      <a href="contact.html" class="inline-block mt-8 px-8 py-3" style="color: #0056b3; background-color: #ffffff;" class="hover:bg-gray-100 rounded-lg text-lg font-medium transition">
+        Start Customizing
+      </a>
+    </div>
+  </section>
+</main>
+<footer class='bg-surfaceAlt text-textMuted py-8'> <div class='container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6'> <div> <h3 class='text-primary font-heading font-bold mb-4'>Velvet & Bloom</h3> <p>Luxury Photo Gifts, Perfectly Personal</p> </div> <div> <h3 class='text-primary font-heading font-bold mb-4'>Quick Links</h3> <ul class='space-y-2'> <li><a href='shop.html' class='hover:text-primary transition'>Shop</a></li> <li><a href='about.html' class='hover:text-primary transition'>About</a></li> <li><a href='contact.html' class='hover:text-primary transition'>Contact</a></li> </ul> </div> <div> <h3 class='text-primary font-heading font-bold mb-4'>Follow Us</h3> <ul class='flex space-x-4'> <li><a href='#' class='hover:text-primary transition'>Instagram</a></li> <li><a href='#' class='hover:text-primary transition'>Facebook</a></li> <li><a href='#' class='hover:text-primary transition'>Twitter</a></li> </ul> </div> </div> <div class='text-center mt-8'> <p>&copy; 2026 Velvet & Bloom. Built by <a href='https://ajayadesign.github.io' class='text-primary hover:underline'>AjayaDesign</a>.</p> </div> </footer>
+<script>document.getElementById('mobile-menu-toggle').addEventListener('click', function() { const menu = document.getElementById('mobile-menu'); menu.classList.toggle('hidden'); });</script>
+<script>document.getElementById('mobile-menu-toggle').addEventListener('click', function() { const menu = document.getElementById('mobile-menu'); menu.classList.toggle('hidden'); });</script>
+<script>/* js-safety-guard */
+try {
+document.getElementById('mobile-menu-toggle').addEventListener('click', function() { const menu = document.getElementById('mobile-menu'); menu.classList.toggle('hidden'); });
+} catch(e) { console.warn('Script error:', e); }
+</script>
+<script>
+  AOS.init({ duration: 800, once: true, offset: 80 });
+  document.querySelectorAll('.counter').forEach(el => {
+    const target = parseInt(el.dataset.target || el.textContent, 10);
+    if (isNaN(target)) return;
+    let current = 0;
+    const step = Math.max(1, Math.ceil(target / 60));
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= target) { el.textContent = target.toLocaleString(); clearInterval(timer); }
+      else { el.textContent = current.toLocaleString(); }
+    }, 25);
+  });
+</script>
+<script>
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+    document.getElementById('scroll-progress').style.width = pct + '%';
+  });
+</script>
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('back-to-top').style.opacity = window.scrollY > 400 ? '1' : '0';
+  });
+</script>
+</body>
+</html>

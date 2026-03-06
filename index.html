@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script>
+    tailwind.config = { theme: { extend: { colors: { primary: '#6B4E71', accent: '#886a73', cta: '#6B4E71', ctaHover: '#8A6689', surface: '#FFF9F8', surfaceAlt: '#F7E6EE', textMain: '#3E2A3A', textMuted: '#9A7D90' }, fontFamily: { heading: ['Cormorant Garamond'], body: ['Montserrat'] } } } }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { overflow-x: hidden; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+    .gradient-text {
+      background: linear-gradient(135deg, var(--tw-gradient-from, #fff), var(--tw-gradient-to, #ccc));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .glass {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .noise::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+    .counter { display: inline-block; }
+  </style>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <title>Home — Velvet &amp; Bloom</title>
+  <meta name="description" content="Introduce the brand, showcase luxury gift options, and guide users to explore products.">
+  <meta property="og:title" content="Home — Velvet &amp; Bloom">
+  <meta property="og:description" content="Introduce the brand, showcase luxury gift options, and guide users to explore products.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Velvet & Bloom",
+  "description": "Luxury Photo Gifts, Perfectly Personal"
+}</script>
+
+
+</head>
+<body class="bg-surface text-textMain font-body antialiased overflow-x-hidden">
+<nav class='fixed top-0 w-full backdrop-blur-xl bg-surface/80 border-b border-accent transition-all duration-300'> <div class='container mx-auto px-6 py-4 flex items-center justify-between'> <a href='index.html' class='text-primary text-lg font-heading font-bold'>Velvet & Bloom</a> <ul class='hidden md:flex space-x-6'> <li><a href='shop.html' class='text-textMuted hover:text-primary transition'>Shop</a></li> <li><a href='about.html' class='text-textMuted hover:text-primary transition'>About</a></li> <li><a href='contact.html' class='text-textMuted hover:text-primary transition'>Contact</a></li> </ul> <button class='md:hidden text-primary focus:outline-none' id='mobile-menu-toggle'>☰</button> <a href='shop.html' class='bg-primary text-surface px-4 py-2 rounded-lg shadow-md hover:bg-ctaHover transition'>Shop Now</a> </div> <div id='mobile-menu' class='hidden bg-surface/90 w-full absolute top-full left-0 shadow-lg'> <ul class='flex flex-col space-y-4 p-4'> <li><a href='shop.html' class='text-textMuted hover:text-primary transition'>Shop</a></li> <li><a href='about.html' class='text-textMuted hover:text-primary transition'>About</a></li> <li><a href='contact.html' class='text-textMuted hover:text-primary transition'>Contact</a></li> </ul> </div> </nav>
+<main>
+  <!-- Hero Section -->
+  <section id="hero" class="min-h-screen bg-surface flex items-center justify-center relative" data-aos="fade-up">
+    <div class="text-center max-w-4xl px-6">
+      <h1 class="text-4xl md:text-6xl font-heading bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-6" data-aos="fade-up" data-aos-duration="1000" style="color: #000000;">Timeless Gifts Co.</h1>
+      <p class="font-body text-lg md:text-xl text-muted mb-8" data-aos="fade-up" data-aos-delay="200" style="color: #333333;">
+        Celebrate your most cherished moments with luxurious photo magnets and personalized gifts designed to last forever.
+      </p>
+      <a href="shop.html" class="bg-cta text-white font-body text-lg px-6 py-3 rounded-md shadow-md hover:bg-ctaHover transition focus:outline-none focus:ring-4 focus:ring-ctaHover focus:ring-opacity-50" data-aos="fade-up" data-aos-delay="400" style="background-color: #004080; color: #ffffff;">
+        Explore the Collection
+      </a>
+    </div>
+  </section>
+
+  <!-- Featured Products Section -->
+  <section id="featured-products" class="bg-surfaceAlt py-24 md:py-32" data-aos="fade-up">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-heading text-primary text-center mb-12" data-aos="fade-up" style="color: #000000;">Our Featured Creations</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <article class="hover:shadow-xl hover:-translate-y-1 transition" data-aos="fade-up" data-aos-delay="0">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1602526207561-6fc5d8f0a5c6?w=800&q=80" alt="Elegant photo magnet with a family portrait on a wooden table" class="w-full rounded-lg">
+          <h3 class="font-body text-lg text-primary mt-4" style="color: #000000;">Elegant Photo Magnets</h3>
+        </article>
+        <article class="hover:shadow-xl hover:-translate-y-1 transition" data-aos="fade-up" data-aos-delay="100">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1587223962934-6fdc0e5aaf6e?w=800&q=80" alt="Personalized gift set with photo magnets and chocolates in a decorative box" class="w-full rounded-lg">
+          <h3 class="font-body text-lg text-primary mt-4" style="color: #000000;">Personalized Gift Sets</h3>
+        </article>
+        <article class="hover:shadow-xl hover:-translate-y-1 transition" data-aos="fade-up" data-aos-delay="200">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1573497160012-5aea5c3e6a94?w=800&q=80" alt="Romantic photo magnets with a couple's portrait on a rustic background" class="w-full rounded-lg">
+          <h3 class="font-body text-lg text-primary mt-4" style="color: #000000;">Romantic Keepsakes</h3>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="bg-surface py-24 md:py-32" data-aos="fade-up">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-heading text-primary mb-12" data-aos="fade-up" style="color: #000000;">What Our Customers Say</h2>
+      <blockquote class="font-body text-lg text-muted italic" data-aos="fade-up" data-aos-delay="100" style="color: #333333;">
+        "I gifted a set of photo magnets to my parents for their anniversary, and they were moved to tears. The quality and attention to detail were extraordinary. Truly a gift to remember!"
+      </blockquote>
+      <p class="font-body text-lg text-primary mt-4" data-aos="fade-up" data-aos-delay="200" style="color: #000000;">— Sarah L.</p>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section id="cta" class="bg-gradient-to-br from-primary via-accent to-secondary py-24 md:py-32 text-center" data-aos="fade-up">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-heading text-white mb-6" data-aos="fade-up" data-aos-delay="0" style="color: #ffffff;">Create Your Perfect Gift Today</h2>
+      <p class="font-body text-lg text-white mb-8" data-aos="fade-up" data-aos-delay="100" style="color: #cccccc;">
+        Start customizing your luxurious photo magnets or explore our curated gift sets to find the perfect way to share your cherished moments.
+      </p>
+      <a href="shop.html" class="bg-white text-primary font-body text-lg px-6 py-3 rounded-md shadow-md hover:bg-gray-100 transition focus:outline-none focus:ring-4 focus:ring-white focus:ring-opacity-50" data-aos="fade-up" data-aos-delay="200" style="color: #004080;">
+        Start Customizing Now
+      </a>
+    </div>
+  </section>
+</main>
+<footer class='bg-surfaceAlt text-textMuted py-8'> <div class='container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6'> <div> <h3 class='text-primary font-heading font-bold mb-4'>Velvet & Bloom</h3> <p>Luxury Photo Gifts, Perfectly Personal</p> </div> <div> <h3 class='text-primary font-heading font-bold mb-4'>Quick Links</h3> <ul class='space-y-2'> <li><a href='shop.html' class='hover:text-primary transition'>Shop</a></li> <li><a href='about.html' class='hover:text-primary transition'>About</a></li> <li><a href='contact.html' class='hover:text-primary transition'>Contact</a></li> </ul> </div> <div> <h3 class='text-primary font-heading font-bold mb-4'>Follow Us</h3> <ul class='flex space-x-4'> <li><a href='#' class='hover:text-primary transition'>Instagram</a></li> <li><a href='#' class='hover:text-primary transition'>Facebook</a></li> <li><a href='#' class='hover:text-primary transition'>Twitter</a></li> </ul> </div> </div> <div class='text-center mt-8'> <p>&copy; 2026 Velvet & Bloom. Built by <a href='https://ajayadesign.github.io' class='text-primary hover:underline'>AjayaDesign</a>.</p> </div> </footer>
+<script>document.getElementById('mobile-menu-toggle').addEventListener('click', function() { const menu = document.getElementById('mobile-menu'); menu.classList.toggle('hidden'); });</script>
+<script>document.getElementById('mobile-menu-toggle').addEventListener('click', function() { const menu = document.getElementById('mobile-menu'); menu.classList.toggle('hidden'); });</script>
+<script>/* js-safety-guard */
+try {
+document.getElementById('mobile-menu-toggle').addEventListener('click', function() { const menu = document.getElementById('mobile-menu'); menu.classList.toggle('hidden'); });
+} catch(e) { console.warn('Script error:', e); }
+</script>
+<script>
+  AOS.init({ duration: 800, once: true, offset: 80 });
+  document.querySelectorAll('.counter').forEach(el => {
+    const target = parseInt(el.dataset.target || el.textContent, 10);
+    if (isNaN(target)) return;
+    let current = 0;
+    const step = Math.max(1, Math.ceil(target / 60));
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= target) { el.textContent = target.toLocaleString(); clearInterval(timer); }
+      else { el.textContent = current.toLocaleString(); }
+    }, 25);
+  });
+</script>
+<script>
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+    document.getElementById('scroll-progress').style.width = pct + '%';
+  });
+</script>
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('back-to-top').style.opacity = window.scrollY > 400 ? '1' : '0';
+  });
+</script>
+</body>
+</html>
